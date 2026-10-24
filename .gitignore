@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.zip
+*.csv
+followers*.json
+following.json
+followers*.html
+following.html
+.DS_Store
+Thumbs.db
