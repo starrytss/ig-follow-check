@@ -1,9 +1,6 @@
-# IG Auto Like
+# IG Follow Check
 
 Instagram 名單比對工具 · 山姆蛋實驗室 SamEgg Lab
-
-> 目前的功能是「IG回追檢查」  
-> 專案名稱依作者命名為 IG Auto Like 本版本沒有自動按讚功能
 
 從 [原始工具](https://samtss.com/tools/ig-follow-check/) 獨立整理的靜態開源版本
 
@@ -23,8 +20,8 @@ Instagram 名單比對工具 · 山姆蛋實驗室 SamEgg Lab
 安裝 Node.js 20 或更新版本後
 
 ```sh
-git clone https://github.com/starrytss/ig-auto-like.git
-cd ig-auto-like
+git clone https://github.com/starrytss/ig-follow-check.git
+cd ig-follow-check
 npm start
 ```
 
