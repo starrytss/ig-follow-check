@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IG Auto Like | SamEgg Lab</title>
+<meta name="description" content="在瀏覽器中比對 Instagram 匯出的追蹤與粉絲名單 支援 JSON 與 HTML">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="./assets/base.css"><link rel="stylesheet" href="./assets/ig-follow-check.css">
+<script src="./assets/ig-follow-core.js" defer></script><script src="./assets/ig-follow-check.js" defer></script>
+</head><body class="ig-tool">
+<header class="container project-header"><a href="./">IG Auto Like</a><a href="https://github.com/starrytss/ig-auto-like" target="_blank" rel="noopener noreferrer">GitHub 原始碼 ↗</a></header>
+<main id="main">
+
+<section class="page-banner"><div class="container"><div class="se-import-intro"><div>
+<span class="section-label"><span class="dot"></span>EVERYDAY TOOLS / 04</span>
+<h1>IG回追檢查</h1>
+<p>放入自己的IG追蹤與粉絲名單，看看誰沒有回追、誰和你互相追蹤。</p>
+<p class="ig-privacy"><span aria-hidden="true"></span>名單僅在你的瀏覽器處理，不會上傳或儲存到網站。</p>
+</div></div></div></section>
+<section class="ig-content" aria-label="IG追蹤比對工具"><div class="container">
+<div class="ig-upload-grid">
+<section class="ig-upload" id="following-zone" aria-labelledby="following-title">
+<span class="ig-step">01 / FOLLOWING</span><h2 id="following-title">我追蹤的人</h2>
+<p>選擇 <strong>following.json</strong> 或 following.html。</p>
+<label for="following-files">選擇檔案，也可以拖曳到這裡</label>
+<input type="file" id="following-files" accept=".json,.html,.htm" multiple aria-describedby="following-info">
+<p class="ig-file-info" id="following-info" aria-live="polite">尚未選擇檔案</p>
+<button type="button" class="ig-text-button" id="following-clear" hidden>清除追蹤名單</button>
+</section>
+<section class="ig-upload" id="followers-zone" aria-labelledby="followers-title">
+<span class="ig-step">02 / FOLLOWERS</span><h2 id="followers-title">追蹤我的人</h2>
+<p>選擇 <strong>followers_1.json</strong>；有多個檔案時請一次全選，也支援HTML。</p>
+<label for="followers-files">選擇全部粉絲名單，也可以拖曳到這裡</label>
+<input type="file" id="followers-files" accept=".json,.html,.htm" multiple aria-describedby="followers-info">
+<p class="ig-file-info" id="followers-info" aria-live="polite">尚未選擇檔案</p>
+<button type="button" class="ig-text-button" id="followers-clear" hidden>清除粉絲名單</button>
+</section>
+</div>
+<div class="ig-controls"><button type="button" class="btn btn-primary" id="ig-compare" disabled>開始比對 ↗</button><button type="button" class="btn btn-secondary" id="ig-reset">全部清除</button></div>
+<p class="ig-status" id="ig-status" role="status" aria-live="polite">選擇兩份名單後，就能開始比對。</p>
+<noscript><p>請開啟JavaScript以在瀏覽器中比對名單。</p></noscript>
+<section class="ig-results" id="ig-results" aria-labelledby="ig-results-heading" tabindex="-1" hidden>
+<h2 id="ig-results-heading" class="mini-label">比對結果</h2>
+<dl class="ig-stats">
+<div class="ig-stat"><dt>我追蹤的人</dt><dd id="ig-stat-following">0</dd></div>
+<div class="ig-stat"><dt>追蹤我的人</dt><dd id="ig-stat-followers">0</dd></div>
+<div class="ig-stat ig-stat-highlight"><dt>未回追</dt><dd id="ig-stat-notFollowingBack">0</dd></div>
+<div class="ig-stat"><dt>互相追蹤</dt><dd id="ig-stat-mutual">0</dd></div>
+</dl>
+<div class="ig-result-card">
+<div class="ig-filters" role="group" aria-label="選擇比對分類">
+<button type="button" class="ig-filter" data-ig-view="notFollowingBack" aria-pressed="true">未回追</button>
+<button type="button" class="ig-filter" data-ig-view="mutual" aria-pressed="false">互相追蹤</button>
+<button type="button" class="ig-filter" data-ig-view="fans" aria-pressed="false">你沒追蹤的粉絲</button>
+<button type="button" class="ig-filter" data-ig-view="following" aria-pressed="false">我追蹤的人</button>
+</div>
+<div class="ig-result-top"><div><h2 id="ig-result-title">未回追</h2><p id="ig-result-count" aria-live="polite"></p></div>
+<label class="ig-search" for="ig-search"><span>搜尋帳號</span><input id="ig-search" type="search" placeholder="輸入IG帳號" autocomplete="off" spellcheck="false"></label></div>
+<ul class="ig-list" id="ig-list" aria-label="帳號名單"></ul>
+<p class="ig-empty" id="ig-empty" hidden></p>
+<button type="button" class="ig-text-button" id="ig-more" hidden>再顯示100個帳號 ↓</button>
+<div class="ig-controls"><button type="button" class="btn btn-primary" id="ig-download">匯出CSV ↓</button><button type="button" class="btn btn-secondary" id="ig-copy">複製名單</button></div>
+<p class="ig-actions-status" id="ig-actions-status" role="status" aria-live="polite"></p>
+<div class="ig-copy-fallback" id="ig-copy-fallback" hidden><label for="ig-copy-text">選取並複製名單</label><textarea id="ig-copy-text" readonly></textarea></div>
+</div>
+<p class="ig-note">結果以匯出當時的資料為準。請使用同一帳號、同一次匯出的完整名單；帳號更名、停用或資料不完整，都可能影響結果。</p>
+</section>
+<details class="ig-help"><summary>還沒有檔案？取得IG名單的方法</summary>
+<ol>
+<li>在Instagram的設定中開啟「帳號管理中心」，找到「你的資訊和權限」裡的資料匯出／下載功能。</li>
+<li>選擇自己的IG帳號及「追蹤者和追蹤中」相關資料，時間範圍選「不限時間／所有時間」，格式建議選<strong>JSON</strong>。</li>
+<li>下載完成後先解壓縮，找到<code>followers_and_following</code>資料夾中的<code>following.json</code>及<code>followers_1.json</code>。若有<code>followers_2.json</code>等分檔，請一起選取。</li>
+</ol>
+<p>各帳號的選單名稱可能不同，可參考<a href="https://help.instagram.com/181231772500920" target="_blank" rel="noopener noreferrer">Instagram官方匯出說明 ↗</a>。若下載的是HTML格式，也可以直接使用。</p>
+</details>
+<details class="ig-help"><summary>可以只輸入IG帳號就查詢嗎？</summary><p>目前這個工具使用你自行匯出的名單進行比對，無法只靠帳號名稱讀取追蹤關係。你不需要在這裡登入Instagram或提供密碼。</p></details>
+<p class="ig-note">每次選擇檔案會取代該欄位的名單；有分檔請一次全選。本頁不會記住你的名單，重新整理或關閉分頁後，需重新選取檔案。每個檔案上限40MB、合計80MB。</p>
+</div></section></main>
+<footer class="container">© 2026 SamEgg Lab · <a href="https://samtss.com/tools/ig-follow-check/">原始工具</a> · <a href="./LICENSE">MIT License</a></footer>
+</body></html>
