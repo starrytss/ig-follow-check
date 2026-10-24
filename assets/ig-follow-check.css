@@ -1,0 +1,65 @@
+
+.ig-tool .page-banner {padding-bottom:40px}
+.ig-tool .page-banner p {max-width:720px}
+.ig-content {padding:0 0 88px;background:var(--cream)}
+.ig-privacy {display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 16px;border-radius:var(--radius-full);background:var(--honey-glow);color:var(--dark);font-size:15px;font-weight:700}
+.ig-privacy span {width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.ig-upload-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.ig-upload {padding:30px;background:var(--white);border:2px dashed var(--honey-glow);border-radius:12px;box-shadow:var(--shadow-soft);min-width:0;transition:border-color .2s,background .2s}
+.ig-upload.ig-dragging,.ig-upload:focus-within {border-color:var(--honey);background:var(--cream)}
+.ig-upload h2 {font:800 24px/1.4 var(--font-display);margin:0 0 10px}
+.ig-upload p {color:var(--brown);margin-bottom:18px;overflow-wrap:anywhere}
+.ig-upload .ig-step {display:block;color:var(--brown);font:800 15px var(--font-display);margin-bottom:12px}
+.ig-upload label {display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.ig-upload input[type=file] {display:block;width:100%;max-width:100%;font:600 15px var(--font-body);color:var(--brown);border-radius:12px;min-height:48px}
+.ig-upload input::file-selector-button {border:0;border-radius:var(--radius-full);padding:12px 18px;margin-right:10px;background:var(--honey-glow);color:var(--dark);font:800 15px var(--font-body);cursor:pointer}
+.ig-file-info {font-size:15px;min-height:28px;margin-top:14px;margin-bottom:0!important}
+.ig-tool button {cursor:pointer;font-family:var(--font-body)}
+.ig-text-button {padding:8px 0;border:0;background:transparent;color:var(--brown);font-size:15px;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+.ig-controls {display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.ig-tool .btn {border:2px solid transparent;min-height:48px;font-size:16px}
+.ig-tool .btn-secondary {border-color:var(--honey-glow)}
+.ig-tool button:disabled {opacity:.5;cursor:default;transform:none;box-shadow:none}
+.ig-tool [hidden] {display:none!important}
+.ig-status {min-height:30px;color:var(--brown);margin-top:14px;font-size:16px;overflow-wrap:anywhere}
+.ig-error {font-weight:800;color:var(--dark);border-left:4px solid var(--amber);padding-left:12px}
+.ig-help {padding:24px 28px;margin-top:24px;border:1px solid var(--honey-glow);border-radius:12px;background:var(--white)}
+.ig-help summary {font-size:18px;font-weight:800;cursor:pointer}
+.ig-help ol {padding-left:24px;margin:18px 0}
+.ig-help li {padding-left:4px;margin-bottom:10px;color:var(--brown)}
+.ig-help p,.ig-note {font-size:15px;color:var(--brown)}
+.ig-help a {text-decoration:underline;text-underline-offset:4px;font-weight:700}
+.ig-help code {background:var(--cream);padding:2px 5px;border-radius:4px;font-size:14px;overflow-wrap:anywhere}
+.ig-results {margin-top:46px;scroll-margin-top:100px;outline-offset:8px}
+.ig-stats {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:28px}
+.ig-stat {background:var(--white);border:1px solid var(--honey-glow);border-radius:12px;padding:20px 22px}
+.ig-stat.ig-stat-highlight {background:var(--honey)}
+.ig-stat dt {font-size:15px;color:var(--brown);font-weight:700}
+.ig-stat dd {font:800 clamp(28px,4vw,40px)/1.3 var(--font-display);margin:8px 0 0;overflow-wrap:anywhere}
+.ig-result-card {background:var(--white);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-soft);padding:28px}
+.ig-filters {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.ig-filter {background:var(--cream);color:var(--brown);border:0;border-radius:var(--radius-full);padding:11px 17px;min-height:44px;font-size:15px;font-weight:800}
+.ig-filter[aria-pressed=true] {background:var(--honey);color:var(--dark)}
+.ig-result-top {display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
+.ig-result-top h2 {font:800 25px/1.4 var(--font-display);margin-bottom:6px}
+.ig-result-top p {font-size:15px;color:var(--brown)}
+.ig-search {flex:0 1 300px;min-width:0;display:block}
+.ig-search span {display:block;font-size:15px;font-weight:700;margin-bottom:7px}
+.ig-search input {width:100%;min-height:48px;min-width:0;border:1px solid var(--line);border-radius:14px;padding:10px 14px;font:500 17px var(--font-body);background:var(--cream);color:var(--dark)}
+.ig-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;padding:0;margin:22px 0 0;list-style:none}
+.ig-list li {min-width:0;border-bottom:1px solid var(--honey-glow)}
+.ig-list a {display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:60px;padding:12px 4px;font-size:17px;font-weight:700}
+.ig-list a>span:first-child {min-width:0;overflow-wrap:anywhere}
+.ig-list a:hover {color:var(--amber)}
+.ig-account-action {font-size:14px;font-weight:600;color:var(--brown);white-space:nowrap}
+.ig-empty {margin:28px 0;padding:30px;text-align:center;background:var(--cream);border-radius:16px;color:var(--brown)}
+.ig-results .ig-controls {margin-top:26px}
+.ig-actions-status {font-size:15px;color:var(--brown);min-height:26px;margin-top:12px}
+.ig-copy-fallback {margin-top:18px}
+.ig-copy-fallback label {display:block;font-size:15px;font-weight:700;margin-bottom:8px}
+.ig-copy-fallback textarea {width:100%;min-height:130px;border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--cream);font:16px/1.6 var(--font-body);resize:vertical;color:var(--dark)}
+.ig-note {margin-top:18px}
+@media(max-width:800px) {.ig-stats {grid-template-columns:repeat(2,minmax(0,1fr))}.ig-list {grid-template-columns:1fr}.ig-upload {padding:24px}}
+@media(max-width:600px) {.ig-upload-grid {grid-template-columns:1fr;gap:18px}.ig-result-card {padding:20px}.ig-help {padding:20px}.ig-controls .btn {flex:1 1 auto}.ig-stat {padding:18px}.ig-search {flex-basis:100%}.ig-privacy {font-size:14px;border-radius:16px}.ig-filters {gap:7px}.ig-filter {font-size:14px;padding:10px 13px}.ig-content {padding-bottom:56px}}
+@media(prefers-reduced-motion:reduce) {.ig-upload {transition:none}}
+
